@@ -1,9 +1,10 @@
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require('dotenv/config');
-
+const cors = require('cors')
 // ℹ️ Connects to the database
-require('./db');
+const openConnection = require('./db/index');
+openConnection()
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
@@ -22,10 +23,11 @@ app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 
 // 👇 Start handling routes here
 const index = require('./routes/index');
+app.use(cors())
 app.use('/', index);
 
 const droneRoutes = require('./routes/drones')
-app.use('/', droneRoutes)
+app.use('/drones', droneRoutes)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <title>Drones!</title>
+</head>
+<body>
+    <h1>DRONES !</h1>
+    <div class="indicators">
+        <div id="indiDeleted" >DELETED!</div>
+        <div id="indiError" >ERROR</div>
+        <div id="indicator">
+            <div>  X  </div>
+            <div>DELETED ! </div>
+        </div>
+    </div>
+    <table>
+        <caption>Drones</caption>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Proppelers</th>
+                <th scope="col">maxSpeed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">super Drone</th>
+                <td>23</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input id="name"></td>
+                <td><input id="propellers"></td>
+                <td><input id="maxSpeed"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <button id="add">Add !</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
